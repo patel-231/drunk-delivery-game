@@ -1,1 +1,51 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <title>Drunk Delivery Game</title>\n    <link rel="stylesheet" href="styles.css">\n</head>\n<body>\n    <header>\n        <h1>Welcome to the Drunk Delivery Game</h1>\n    </header>\n    <main>\n        <section id="game">\n            <p>The goal of the game is to deliver as many packages as possible before you get too drunk!</p>\n            <button id="start-game">Start Game</button>\n        </section>\n    </main>\n    <footer>\n        <p>&copy; 2026 Patels Ltd.</p>\n    </footer>\n    <script src="script.js"></script>\n</body>\n</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drunk Delivery Game</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.js"></script>
+</head>
+<body>
+    <canvas id="renderCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('renderCanvas');
+        const engine = new BABYLON.Engine(canvas, true);
+        const scene = new BABYLON.Scene(engine);
+
+        // Device detection
+        const isMobile = /Mobi/i.test(window.navigator.userAgent);
+
+        // Physics
+        BABYLON.SceneLoader.Append('', 'path_to_your_model.babylon', scene, function() {
+            scene.enablePhysics();
+        });
+
+        // Game logic: drunk physics and toilet pressure system
+        function applyDrunkPhysics() {
+            // Implement the physics for drunkenness
+        }
+
+        function handleToiletPressure() {
+            // Implement the toilet pressure mechanics
+        }
+
+        function applyGameplayMechanics() {
+            // Implement full gameplay mechanics
+        }
+
+        // Render loop
+        engine.runRenderLoop(function () {
+            applyDrunkPhysics();
+            handleToiletPressure();
+            applyGameplayMechanics();
+            scene.render();
+        });
+
+        window.addEventListener('resize', function () {
+            engine.resize();
+        });
+    </script>
+</body>
+</html>
